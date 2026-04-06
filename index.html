@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>wOrkee | Nomad Work </title>
+    <title>wOrkee | Nomad Work</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
         
@@ -26,7 +26,7 @@
         /* OVERLAY POSIZIONATO IN ALTO */
         .overlay {
             position: absolute;
-            top: 2%; /* Sposta tutto il blocco verso l'alto */
+            top: 2%; 
             left: 50%;
             transform: translateX(-50%); 
             text-align: center; 
@@ -47,7 +47,7 @@
         /* SCRITTA AD ARCO */
         .nomad-svg {
             overflow: visible;
-            margin-bottom: -20px; /* Avvicina l'arco alla scritta workee */
+            margin-bottom: -20px; 
         }
 
         .nomad-text {
@@ -70,7 +70,7 @@
             justify-content: center;
         }
 
-        /* PIN ICONA PULITA (Sostituisce la O) */
+        /* PIN ICONA PULITA */
         .pin-icon-container {
             display: inline-block;
             width: 0.8em;  
@@ -83,7 +83,6 @@
             top: 0.05em; 
         }
 
-        /* Buco interno del pin */
         .pin-icon-container::after {
             content: '';
             position: absolute;
@@ -113,14 +112,18 @@
         /* GRIGLIA LOCALI */
         .grid-section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
         .grid-title { color: var(--ottanio); text-align: center; margin-bottom: 40px; text-transform: uppercase; }
-        .locali-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .locali-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
         
         .locale-card {
             background: white; border-radius: 10px; overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s;
         }
         .locale-card:hover { transform: translateY(-10px); }
-        .locale-img { width: 100%; height: 200px; background: #ccc; background-size: cover; }
+        .locale-img { width: 100%; height: 200px; background-color: #ccc; background-size: cover; background-position: center; }
         .locale-info { padding: 20px; text-align: left; }
         .locale-info h3 { margin: 0; color: var(--ottanio); font-size: 1.2rem; }
         .locale-info p { font-size: 0.9rem; color: #666; margin: 10px 0; }
@@ -136,12 +139,10 @@
         }
     </style>
 </head>
-
 <body>
 
 <div class="hero">
     <div class="overlay">
-        
         <div class="logo-container">
             <svg viewBox="0 0 200 70" width="220" height="80" class="nomad-svg">
                 <path id="curve" d="M 30,60 Q 100,0 170,60" fill="transparent" />
@@ -165,10 +166,13 @@
             <a href="#" class="btn-nav">Q&A</a>
             <a href="#" class="btn-nav">Contatti</a>
         </div>
+    </div> 
+</div> 
 
-    </div> </div> <div id="locali" class="grid-section">
+<div id="locali" class="grid-section">
     <h2 class="grid-title">Scegli la tua postazione</h2>
     <div class="locali-grid">
+        
         <div class="locale-card">
             <div class="locale-img" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=500');"></div>
             <div class="locale-info">
@@ -177,6 +181,25 @@
                 <a href="locale-1.html" class="btn-info">ESPLORA L'AMBIENTE</a>
             </div>
         </div>
+
+        <div class="locale-card">
+            <div class="locale-img" style="background-image: url('https://images.unsplash.com/photo-1559925393-8be0ec41b50b?q=80&w=500');"></div>
+            <div class="locale-info">
+                <h3>Nome Locale 2</h3>
+                <p>Zona Porto - Atmosfera accogliente - Ottimo caffè.</p>
+                <a href="#" class="btn-info">ESPLORA L'AMBIENTE</a>
+            </div>
+        </div>
+
+        <div class="locale-card">
+            <div class="locale-img" style="background-image: url('https://images.unsplash.com/photo-1521017432531-fbd92d744264?q=80&w=500');"></div>
+            <div class="locale-info">
+                <h3>Nome Locale 3</h3>
+                <p>Zona Residenziale - Silenzioso - Adatto a lunghe sessioni.</p>
+                <a href="#" class="btn-info">ESPLORA L'AMBIENTE</a>
+            </div>
+        </div>
+
     </div>
 </div>
 
