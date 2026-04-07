@@ -109,6 +109,31 @@
             margin-right: 12px;
         }
 
+        /* SEZIONE MAPPA */
+        .location-section {
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .map-wrapper {
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: 15px;
+        }
+
+        .address-link {
+            display: block;
+            margin-bottom: 10px;
+            color: #006B6B;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .address-link:hover { text-decoration: underline; }
+
         /* AREA PRENOTAZIONE TIDYCAL */
         .booking-section {
             margin-top: 50px;
@@ -130,10 +155,9 @@
             margin-bottom: 30px;
         }
 
-        /* IL CALENDARIO VERO E PROPRIO */
         .tidycal-container {
             width: 100%;
-            height: 800px; /* Altezza ottimale per visualizzare tutto il calendario */
+            height: 800px;
             background: #fff;
             border: 1px solid #eee;
             border-radius: 15px;
@@ -141,18 +165,14 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+        iframe { width: 100%; height: 100%; border: none; }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .container { width: 92%; padding: 25px; margin-top: -60px; }
             h1 { font-size: 1.8rem; }
             .services-list { grid-template-columns: 1fr; }
-            .tidycal-container { height: 950px; } /* Più spazio su mobile */
+            .tidycal-container { height: 950px; }
         }
     </style>
 </head>
@@ -168,7 +188,7 @@
         <h1>Bar Le Terrazze</h1>
         
         <p>
-            Lavora con una vista mozzafiato. Bar Le Terrazze offre un ambiente sereno e professionale, ideale per chi ha bisogno di concentrazione e una connessione Wi-Fi impeccabile. Le nostre postazioni sono progettate per darti il massimo comfort durante la giornata.
+            Lavora con una vista mozzafiato. Bar Le Terrazze offre un ambiente sereno e professionale, ideale per chi ha bisogno di concentrazione e una connessione Wi-Fi impeccabile.
         </p>
         
         <div class="services-grid">
@@ -181,6 +201,21 @@
                 <li>Climatizzazione</li>
                 <li>Accesso area Lounge</li>
             </ul>
+        </div>
+
+        <div class="location-section">
+            <h3>Dove siamo</h3>
+            <a href="https://maps.app.goo.gl/TUO_LINK_DIRETTO" target="_blank" class="address-link">
+                📍 Via Vittorio Emanuele, 123 - Palermo (PA)
+            </a>
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.0544!2d13.361!3d38.115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDA2JzU0LjAiTiAxM8KwMjEnMzkuNiJF!5e0!3m2!1sit!2sit!4v1712450000000!5m2!1sit!2sit" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </div>
 
         <div class="booking-section">
