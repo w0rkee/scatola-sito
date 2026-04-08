@@ -1,229 +1,480 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
+
 <html lang="it">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>wOrkee | Nomad Work</title>
+
     <style>
+
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
         
+
         :root { --ottanio: #006B6B; }
+
         body, html { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: #f4f4f4; scroll-behavior: smooth; }
 
+
         /* HERO SECTION */
+
         .hero {
+
             width: 100vw; 
+
             height: 100vh; 
+
             margin: 0;
+
             background: url('img/hero_w0rkee_smartworking_palermo-oriz2.png') no-repeat;
+
             background-position: top center;
+
             background-size: cover;
+
             background-color: #0b4c4c;
+
             position: relative; 
-            overflow: visible;
+
+            overflow: hidden;
+
         }
+
 
         /* OVERLAY POSIZIONATO IN ALTO */
+
         .overlay {
+
             position: absolute;
+
             top: 2%; 
+
             left: 50%;
+
             transform: translateX(-50%); 
+
             text-align: center; 
+
             width: 90%;
+
             max-width: 900px;
+
             z-index: 10;
+
         }
+
 
         /* LOGO CONTAINER */
+
         .logo-container {
+
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
+
             margin-bottom: 40px;
+
             position: relative;
+
         }
+
 
         /* SCRITTA AD ARCO */
+
         .nomad-svg {
+
             overflow: visible;
+
             margin-bottom: -20px; 
+
         }
+
 
         .nomad-text {
+
             fill: white;
+
             font-weight: 700;
+
             font-size: 16px; 
+
             text-transform: uppercase;
+
             letter-spacing: 3px;
+
         }
+
 
         /* WORKEE MAIN CON PIN */
+
         .workee-main {
+
             font-size: clamp(3rem, 10vw, 4.5rem);
+
             font-weight: 700;
+
             color: white;
+
             letter-spacing: -2px;
+
             line-height: 1;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
         }
+
 
         /* PIN ICONA PULITA */
+
         .pin-icon-container {
+
             display: inline-block;
+
             width: 0.8em;  
+
             height: 0.8em; 
+
             background-color: white;
+
             margin: 0 0.05em;
+
             position: relative;
+
             border-radius: 50% 50% 50% 0;
+
             transform: rotate(-45deg);
+
             top: 0.05em; 
+
         }
+
 
         .pin-icon-container::after {
+
             content: '';
+
             position: absolute;
+
             width: 35%;
+
             height: 35%;
+
             background-color: #0b4c4c; 
+
             border-radius: 50%;
+
             top: 50%;
+
             left: 50%;
+
             transform: translate(-50%, -50%) rotate(45deg);
+
         }
+
 
         h1 { 
+
             color: white; 
+
             font-size: clamp(1rem, 3vw, 1.5rem); 
+
             margin-bottom: 25px; 
+
             text-transform: uppercase; 
+
             opacity: 0.9; 
+
             letter-spacing: 2px;
+
         }
+
 
         /* MENU NAVIGAZIONE HERO */
+
         .menu-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+
         .btn-nav { border: 2px solid white; padding: 12px; color: white; text-decoration: none; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; transition: 0.3s; }
+
         .btn-nav:hover { background: white; color: var(--ottanio); }
 
+
         /* GRIGLIA LOCALI */
+
         .grid-section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+
         .grid-title { color: var(--ottanio); text-align: center; margin-bottom: 40px; text-transform: uppercase; }
+
         .locali-grid { 
+
             display: grid; 
+
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+
             gap: 30px; 
+
         }
+
         
+
         .locale-card {
+
             background: white; border-radius: 10px; overflow: hidden;
+
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s;
+
         }
+
         .locale-card:hover { transform: translateY(-10px); }
+
         .locale-img { width: 100%; height: 200px; background-color: #ccc; background-size: cover; background-position: center; }
+
         .locale-info { padding: 20px; text-align: left; }
+
         .locale-info h3 { margin: 0; color: var(--ottanio); font-size: 1.2rem; }
+
         .locale-info p { font-size: 0.9rem; color: #666; margin: 10px 0; }
+
         
+
         .btn-info {
+
             display: inline-block; padding: 10px 20px; background: var(--ottanio);
+
             color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.8rem;
+
         }
+
 
         @media (max-width: 700px) { 
+
             .menu-grid { grid-template-columns: 1fr 1fr; } 
+
             .overlay { top: 5%; }
+
         }
+
         
+
         /* migliora la casella translate */
+
        /* 1. Nasconde la fascia bianca, il banner e i tooltip */
+
 .goog-te-banner-frame, .goog-te-balloon-frame, .goog-te-gadget-icon, .skiptranslate {
+
     display: none !important;
+
 }
+
 
 /* 2. Riporta il sito in cima ignorando lo spostamento di Google */
+
 body { top: 0 !important; position: static !important; }
 
+
 /* 3. Stile minimal per il selettore lingua */
+
 .goog-te-gadget-simple {
+
     background: #fff !important;
+
     border: 1px solid #ddd !important;
+
     padding: 8px !important;
+
     border-radius: 4px !important;
+
     font: 14px/1.4 sans-serif !important;
+
 }
 
-/* 4. Posiziona il selettore in alto a DESTRA sopra la foto */
-#google_translate_element {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
     </style>
 
 
+
 </head>
+
 <body>
+
+
+//translate.google
 
 <div id="google_translate_element"></div>
 
+
 <div class="hero">
+
     <div class="overlay">
+
         <div class="logo-container">
+
             <svg viewBox="0 0 200 70" width="220" height="80" class="nomad-svg">
+
                 <path id="curve" d="M 30,60 Q 100,0 170,60" fill="transparent" />
+
                 <text>
+
                     <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="nomad-text">
+
                         NOMAD WORK
+
                     </textPath>
+
                 </text>
+
             </svg>
+
+            
+
             <div class="workee-main">
+
                 w<span class="pin-icon-container"></span>rkee
+
             </div>
+
         </div>
+
+
         <h1>REDEFINED</h1>
+
+
         <div class="menu-grid">
+
             <a href="come-funziona.html" class="btn-nav">come funziona</a>
+
             <a href="#locali" class="btn-nav">Locali</a>
+
             <a href="Q&A.html" class="btn-nav">Q&A</a>
+
             <a href="contatti.html" class="btn-nav">Contatti</a>
+
         </div>
+
     </div> 
+
 </div> 
 
+
 <div id="locali" class="grid-section">
+
+    <h2 class="grid-title">Scegli la tua postazione</h2>
+
+    <div class="locali-grid">
+
+        
+
+        <div class="locale-card">
+
+            <div class="locale-img" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=500');"></div>
+
+            <div class="locale-info">
+
+                <h3>Nome Locale 1</h3>
+
+                <p>Zona Centro - Wi-Fi Alta Velocità - Prese elettriche dedicate.</p>
+
+                <a href="locale-1.html" class="btn-info">ESPLORA L'AMBIENTE</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="locale-card">
+
+            <div class="locale-img" style="background-image: url('https://images.unsplash.com/photo-1559925393-8be0ec41b50b?q=80&w=500');"></div>
+
+            <div class="locale-info">
+
+                <h3>Nome Locale 2</h3>
+
+                <p>Zona Porto - Atmosfera accogliente - Ottimo caffè.</p>
+
+                <a href="#" class="btn-info">ESPLORA L'AMBIENTE</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="locale-card">
+
+            <div class="locale-img" style="background-image: url('https://images.unsplash.com/photo-1521017432531-fbd92d744264?q=80&w=500');"></div>
+
+            <div class="locale-info">
+
+                <h3>Nome Locale 3</h3>
+
+                <p>Zona Residenziale - Silenzioso - Adatto a lunghe sessioni.</p>
+
+                <a href="#" class="btn-info">ESPLORA L'AMBIENTE</a>
+
+            </div>
+
+        </div>
+
+
     </div>
 
-<script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'it', 
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
-    }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</div>
+
+
+<div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 600px; background: rgba(0, 107, 107, 0.95); color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; display: none; text-align: center; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+
+    <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.5;">
+
+        Utilizziamo i cookie per migliorare la tua esperienza e per le prenotazioni. Continuando a navigare, accetti la nostra privacy policy.
+
+    </p>
+
+    <button onclick="acceptCookies()" style="background: white; color: #006b6b; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; text-transform: uppercase; transition: 0.3s;">Accetto</button>
+
+</div>
+
 
 <script>
-    window.addEventListener('load', function() {
+
+    // cookie: Funzione per mostrare il banner se non è già stato accettato
+
+    window.onload = function() {
+
         if (!localStorage.getItem('w0rkee_cookies_accepted')) {
+
             document.getElementById('cookie-banner').style.display = 'block';
+
         }
-    });
+
+    }
+
+
+    // cookie: Funzione per nascondere il banner e salvare la scelta
 
     function acceptCookies() {
+
         localStorage.setItem('w0rkee_cookies_accepted', 'true');
+
         document.getElementById('cookie-banner').style.display = 'none';
+
     }
+
 </script>
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+//translate.google
+
 <script src="script.js"></script>
 
+
 </body>
-</html>
+
+</html> 
