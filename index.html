@@ -148,6 +148,33 @@
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+        /* migliora translate barra */
+        /* Rimuove il bordo fastidioso intorno al widget */
+#google_translate_element {
+    display: inline-block;
+}
+
+.goog-te-gadget-simple {
+    background-color: #fff !important;
+    border: 1px solid #ddd !important;
+    padding: 8px !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+}
+
+/* Nasconde l'icona di Google (opzionale per un look più pulito) */
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+/* Rimuove il banner "Suggerisci una traduzione migliore" che sposta il layout */
+.goog-te-banner-frame.skiptranslate, .goog-te-balloon-frame {
+    display: none !important;
+}
+body {
+    top: 0px !important;
+}
     </style>
 </head>
 <body>
