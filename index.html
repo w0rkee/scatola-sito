@@ -139,36 +139,21 @@
         }
         
         /* migliora la casella translate */
-        /* Rimuove il bordo fastidioso intorno al widget */
-#google_translate_element {
-    display: inline-block;
+       /* 1. Nasconde la fascia bianca, il banner e i tooltip */
+.goog-te-banner-frame, .goog-te-balloon-frame, .goog-te-gadget-icon, .skiptranslate {
+    display: none !important;
 }
 
+/* 2. Riporta il sito in cima ignorando lo spostamento di Google */
+body { top: 0 !important; position: static !important; }
+
+/* 3. Stile minimal per il selettore lingua */
 .goog-te-gadget-simple {
-    background-color: #fff !important;
+    background: #fff !important;
     border: 1px solid #ddd !important;
     padding: 8px !important;
     border-radius: 4px !important;
-    font-size: 14px !important;
-    line-height: 1.4 !important;
-}
-
-/* Nasconde l'icona di Google (opzionale per un look più pulito) */
-.goog-te-gadget-icon {
-    display: none !important;
-}
-
-/* Rimuove il banner "Suggerisci una traduzione migliore" che sposta il layout */
-.goog-te-banner-frame.skiptranslate, .goog-te-balloon-frame {
-    display: none !important;
-}
-body {
-    top: 0px !important;
-}
-        
-/* Nasconde la fascia bianca di google translate */
-iframe.goog-te-banner-frame {
-    display: none !important;
+    font: 14px/1.4 sans-serif !important;
 }
     </style>
 
