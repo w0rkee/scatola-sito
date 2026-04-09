@@ -30,14 +30,14 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.top = '0px';
         }
 
-        // Cambia il testo "Seleziona lingua" in "LINGUA"
+        // Cambia il testo "Seleziona lingua" in "🌐 SELECT"
         var gadgetText = document.querySelector('.goog-te-menu-value span:first-child');
         if (gadgetText) {
             // Controlliamo se contiene le scritte standard di Google
             if (gadgetText.innerText.trim() === 'Seleziona lingua' || 
                 gadgetText.innerText.trim() === 'Select Language' || 
                 gadgetText.innerText.trim() === 'Seleccionar idioma') {
-                gadgetText.innerText = 'LINGUA'; 
+                gadgetText.innerText = '🌐 SELECT'; 
             }
         }
     });
