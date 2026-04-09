@@ -195,6 +195,19 @@ body {
 .goog-te-banner-frame.skiptranslate {
     display: none !important;
 }
+
+  /* Nasconde il testo originale di Google */
+.goog-te-menu-value span:first-child {
+    display: none !important;
+}
+
+/* Inserisce il tuo nuovo testo al suo posto */
+.goog-te-menu-value::before {
+    content: "🌐 LANGUAGE";
+    font-size: 14px;
+    color: #333; /* Cambia il colore in base al tuo sito */
+    margin-right: 5px;
+}
      
     </style>
 
